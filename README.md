@@ -8,23 +8,21 @@ containing all the code required for learining and a `Lab` folder if the Subject
 
 **Folder Structure** <br>
 *BaseDir* <br>
-  |-Year 1 <br>
-    |-PSUC (C Code)
-    
-  |-Year 2 <br>
-    |-Sem 3 <br>
-      |-DSA (C Code) <br>
-      |-DSD (Verilog Code) <br>
-      |-OOP (Java Code) <br>
-    |-Sem 4
-    
-  |-Year 3 <br>
-    |-Sem 5 <br>
-    |-Sem 6
-  
-  |-Year 4 <br>
-    |-Sem 7 <br>
-    |-Sem 8
+.
++-- Year 1
+|   +-- PSUC (C Code)
++-- Year 2
+|   +-- Sem 3
+    |   +-- DSA (C Code)
+    |   +-- DSD (Verilog Code)
+    |   +-- OOP (Java Code)
+|   +-- Sem 4
++-- Year 3
+|   +-- Sem 5
+|   +-- Sem 6
++-- Year 4
+|   +-- Sem 7
+|   +-- Sem 8
 
 ---
 
