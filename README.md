@@ -8,7 +8,7 @@ containing all the code required for learining and a `Lab` folder if the Subject
 
 **Folder Structure** <br>
 *BaseDir* <br>
-  <pre>|-Year 1 <br></pre>
+  |-Year 1 <br>
     |-PSUC (C Code)
     
   |-Year 2 <br>
