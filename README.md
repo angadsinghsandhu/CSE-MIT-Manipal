@@ -7,15 +7,11 @@ B.Tech engineering course in an engineering college .Every subject will have a `
 containing all the code required for learining and a `Lab` folder if the Subject has a lab class.
 
 **Folder Structure** <br>
-*BaseDir* <br>
-.
+*BaseDir*
 +-- Year 1
 |   +-- PSUC (C Code)
 +-- Year 2
 |   +-- Sem 3
-    |   +-- DSA (C Code)
-    |   +-- DSD (Verilog Code)
-    |   +-- OOP (Java Code)
 |   +-- Sem 4
 +-- Year 3
 |   +-- Sem 5
@@ -23,6 +19,9 @@ containing all the code required for learining and a `Lab` folder if the Subject
 +-- Year 4
 |   +-- Sem 7
 |   +-- Sem 8
+|   +-- DSA (C Code)
+|   +-- DSD (Verilog Code)
+|   +-- OOP (Java Code)
 
 ---
 
