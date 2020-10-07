@@ -6,9 +6,9 @@ This project was made to bring together all the collective code required for com
 B.Tech engineering course in an engineering college .Every subject will have a `Practice` folder 
 containing all the code required for learining and a `Lab` folder if the Subject has a lab class.
 
-**Folder Structure**
-*BaseDir*
-  |-Year 1 <br>
+**Folder Structure** <br>
+*BaseDir* <br>
+  <pre>|-Year 1 <br></pre>
     |-PSUC (C Code)
     
   |-Year 2 <br>
