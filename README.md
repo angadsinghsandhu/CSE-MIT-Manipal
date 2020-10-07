@@ -11,7 +11,8 @@ containing all the code required for learining and a `Lab` folder if the Subject
 ```
 BaseDir
 │   README.md
-│   file001.txt    
+│   requirements.txt
+|   LICENSE
 │
 └─── Year 1
 │   │
