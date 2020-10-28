@@ -1,5 +1,4 @@
-// class of a Container that defines the 
-// Type for all its variables
+// Creating Generic Class
 public class TypeContainer<T> {
     // object of type "T" (float, int, str etc.)
     T value;

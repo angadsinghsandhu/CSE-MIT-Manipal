@@ -24,6 +24,14 @@ public class Main {
      * 
      * Generics also provide compile-time type safety that allows programmers to
      * catch invalid types at compile time.
+     * 
+     * TYPE PARAMETERS
+     * 
+     * The type parameters naming conventions are important to learn generics
+     * thoroughly. The common type parameters are as follows:
+     * 
+     * <T> - Type <E> - Element <K> - Key <N> - Number <V> - Value
+     * 
      */
 
     // main driver method
@@ -39,6 +47,14 @@ public class Main {
 
         // second method
         typeContainerExample(sc);
+        System.out.println("\n\n");
+
+        // third method
+        elementContainerExample(sc);
+        System.out.println("\n\n");
+
+        // fourth method
+        wildcardExample(sc);
         System.out.println("\n\n");
 
         // close scanner
@@ -94,5 +110,42 @@ public class Main {
 
         return;
 
+    }
+
+    public static void elementContainerExample(Scanner sc) {
+        // defining arrays
+        Integer[] intArray = { 10, 20, 30, 40, 50 };
+        Character[] charArray = { 'H', 'E', 'L', 'L', 'O', };
+
+        // printing integer array
+        System.out.println("Printing Integer Array");
+        ElementContainer.printArray(intArray);
+        System.out.println("\n");
+
+        // printing char array
+        System.out.println("Printing Character Array");
+        ElementContainer.printArray(charArray);
+    }
+
+    public static void wildcardExample(Scanner sc) {
+        // variables
+        List<Integer> l1 = Arrays.asList(1, 2, 3);
+        ArrayList<Integer> l_1 = new ArrayList<Integer>(Arrays.asList(1, 2, 3));
+        List<String> l2 = Arrays.asList("One", "Two", "Three");
+        ArrayList<Double> l3 = new ArrayList<Double>(Arrays.asList(30.0, 40.0, 50.0));
+        List<Number> l4 = Arrays.asList(1.0, 2.0, 3.0);
+
+        // unbounded examples
+        System.out.println("Printing Integer and String Array using Unbounded Wildcard Generics");
+        UnboundWildcard.displayWeird(l1);
+        UnboundWildcard.displayWeird(l2);
+
+        System.out.println("Printing Integer and Double Array using Unbounded Wildcard Generics");
+        UpperWildcard.displayWeird(l_1);
+        UpperWildcard.displayWeird(l3);
+
+        System.out.println("Printing Integer and Number Array using Unbounded Wildcard Generics");
+        LowerWildcard.displayWeird(l1);
+        LowerWildcard.displayWeird(l4);
     }
 }

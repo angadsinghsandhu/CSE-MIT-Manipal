@@ -1,8 +1,6 @@
 
 // imports
-import java.io.Console;
 import java.util.ArrayList;
-import java.util.List;
 
 // generics class
 public class Generics {
@@ -26,7 +24,7 @@ public class Generics {
     public void unsafeAdd(Object str) {
 
         // unsafe type def List declaration
-        List arr = new ArrayList();
+        ArrayList arr = new ArrayList();
 
         // inserting value
         arr.add(str);
