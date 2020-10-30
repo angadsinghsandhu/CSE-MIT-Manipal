@@ -1,3 +1,6 @@
+// declaring package
+package _11_MultiThreading;
+
 // main driver class
 public class Main {
 

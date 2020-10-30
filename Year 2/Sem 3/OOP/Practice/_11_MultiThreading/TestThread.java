@@ -1,3 +1,6 @@
+// declaring package
+package _11_MultiThreading;
+
 // thread class
 public class TestThread extends Thread {
 

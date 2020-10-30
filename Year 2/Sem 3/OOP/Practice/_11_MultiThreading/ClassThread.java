@@ -1,3 +1,6 @@
+// declaring package
+package _11_MultiThreading;
+
 public class ClassThread extends Thread {
 
     // constructor that inherits from thread

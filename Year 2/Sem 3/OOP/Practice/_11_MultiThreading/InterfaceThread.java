@@ -1,3 +1,6 @@
+// declaring package
+package _11_MultiThreading;
+
 class InterfaceThread implements Runnable {
     // variable
     Thread thrd;
