@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'application'
+	id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group = 'com.ui'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 13
+
+repositories {
+	mavenCentral()
+}
+
+javafx {
+    version = "15.0.1"
+    modules = [ 'javafx.controls' ]
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+mainClassName = 'com.ui.javafx.JavafxApplication'

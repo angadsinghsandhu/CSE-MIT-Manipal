@@ -117,20 +117,20 @@ public class Test {
         t1.start();
         t2.start();
 
-        // // creating threads
-        // Counter incrementThread = new Counter("incrementThread");
-        // Counter decrementThread = new Counter("decrementThread");
+        // creating threads
+        Counter incrementThread = new Counter("incrementThread");
+        Counter decrementThread = new Counter("decrementThread");
 
-        // // incrementing and decrementing
-        // incrementThread.increment();
-        // incrementThread.increment();
-        // incrementThread.increment();
-        // incrementThread.increment();
+        // incrementing and decrementing
+        incrementThread.increment();
+        incrementThread.increment();
+        incrementThread.increment();
+        incrementThread.increment();
 
-        // decrementThread.decrement();
-        // decrementThread.decrement();
-        // decrementThread.decrement();
-        // decrementThread.decrement();
+        decrementThread.decrement();
+        decrementThread.decrement();
+        decrementThread.decrement();
+        decrementThread.decrement();
 
         // System.out.println("Count = " + Counter.getCount());
     }

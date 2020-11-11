@@ -1,21 +1,25 @@
 /******************************************************************************
 
-                    #1 : Tree Data Structure Implementation
+                        #3 : Finding Height of BST
 
 *******************************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
 
+// defining max() and min() functions
+#define max(x,y) (((x) >= (y)) ? (x) : (y))
+#define min(x,y) (((x) <= (y)) ? (x) : (y))
+
 // defining NODE Structure
 struct BstNode
 {
     struct BstNode *left;
-    int data;
     struct BstNode *right;
+    int data;
 };
 
-// creating root Node and setting it as NULL
+// creating empty tree with NULL root Node
 struct BstNode *root = NULL;
 
 // function to create new Node
@@ -55,43 +59,40 @@ struct BstNode *Insert(struct BstNode *base, int data)
     return base;
 }
 
-// function to fing an element
-int Search(struct BstNode *base, int data)
-{
-    if (base == NULL)
-        return 0;
-    else if ((base->data) == data)
-        return 1;
-    else if (data > (base->data))
-        return Search(base->right, data);
-    else
-        return Search(base->left, data);
+// function to find height of BST
+int FindHeight(struct BstNode* base){
+    if(base==NULL){
+        return -1;
+    }
+    
+    // recursive call
+    return max(FindHeight(base->left), FindHeight(base->right)) + 1;
 }
 
 // Main Driver Function
 int main()
 {
-    int i, j = 2;
-    // root = NULL;
-    printf("\nEntering 10, 15, 20 into tree\n");
-
-    root = Insert(root, 15);
-    root = Insert(root, 10);
-    root = Insert(root, 20);
-
-    printf("Entering Number to be Searched : ");
-    scanf("%d", &i);
-
-    j = Search(root, i);
-
-    if (j == 1)
-    {
-        printf("\nNumber Found!!!");
+    // variables
+    int n = 0, i, j = 2, temp;
+    
+    // querying user
+    printf("\nEnter the number of nodes tree : ");
+    scanf("%d", &n);
+    
+    // creating array to store elements of tree
+    int arr[n];
+    
+    printf("\nEntering values for tree\n");
+    for(i=0; i<n; i++){
+        printf("Enter value of Node %d : ", i+1);
+        scanf("%d", &temp);
+        
+        // assigning to tree and adding to array
+        arr[i] = temp;
+        root = Insert(root, temp);
     }
-    else
-    {
-        printf("\nNumber NOT Found :(");
-    }
+    
+    printf("\nHeight of tree is : %d", FindHeight(root));
 
     return 0;
 }
