@@ -5,6 +5,8 @@ import javafx.application.Application;
 /*
 	IMPORTANT, PLS READ BEFORE EXECUTING JAVAFX CODE :
 
+  Hi, this is Angad. The one who wrote all this code
+
 	As I am using Java JDK 13, JavaFX binaries are not very compatible
 	hence I am using this gradle project instead of directly running it.
 
@@ -27,21 +29,31 @@ public class Main {
         System.out.println("\n");
         System.out.println("Launching JavaFX application.");
 
-        // all the following code blocks are different applications,
-        // un-comment them to execute them
+        /*
+         * ============================== all the following code blocks are different
+         * applications, un-comment them to execute them ===============================
+         */
 
-        // // Program 1 : BASIC BLANK WINDOW
+        // // Program 0 : BASIC JavaFX
+        // // Start the JavaFX application by calling launch().
+        // Application.launch(BasicFX.class, args);
+
+        // // Program 1 : Dynamic Addition of RootNode
+        // // Start the JavaFX application by calling launch().
+        // Application.launch(DynamicAddFX.class, args);
+
+        // // Program 2 : BLANK WINDOW
         // // Start the JavaFX application by calling launch().
         // Application.launch(BlankFX.class, args);
 
-        // // Program 2 : BASIC WINDOW WITH A BUTTON
-        // // Start the JavaFX application by calling launch().
-        // // statically on ButtonFX Class
-        // Application.launch(ButtonFX.class, args);
-
-        // Program 3 : ANIMATED TEXT APP
+        // Program 3 : BASIC WINDOW WITH A BUTTON
         // Start the JavaFX application by calling launch().
-        Application.launch(TranslationFX.class, args);
+        // statically on ButtonFX Class
+        Application.launch(ButtonFX.class, args);
+
+        // // Program 4 : ANIMATED TEXT APP
+        // // Start the JavaFX application by calling launch().
+        // Application.launch(TranslationFX.class, args);
     }
 
 }

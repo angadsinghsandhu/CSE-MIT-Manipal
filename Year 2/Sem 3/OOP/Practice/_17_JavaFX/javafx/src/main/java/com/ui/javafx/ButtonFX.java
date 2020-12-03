@@ -1,8 +1,13 @@
 package com.ui.javafx;
 
+import java.util.concurrent.TimeUnit;
+
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
+import javafx.event.*;
 // import javafx.scene.Group;
 import javafx.scene.layout.*;
 import javafx.scene.Scene;
@@ -27,6 +32,26 @@ public class ButtonFX extends Application {
         // creating Button and Label
         Button btn = new Button("Click Here");
         Label label = new Label("Button App");
+
+        // adding event to button press
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+
+            // adding handle method
+            public void handle(ActionEvent ae) {
+
+                // changing label on button press
+                label.setText("Button Pressed");
+
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                label.setText("Button App");
+
+            }
+        });
 
         // adding button to the parent root
         root.getChildren().addAll(btn, label);
