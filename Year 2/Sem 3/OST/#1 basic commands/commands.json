@@ -1,0 +1,48 @@
+{
+    "shell prompt": "$",
+    "echo": "$ echo 'welcome'",
+    "env var": "$ echo $USER",
+    "who": "$ who",
+    "who am i": "$ who am i",
+
+    "ls": "$ ls",
+    "ls*" : "$ ls abc*",
+    "ls -I": "$ ls -I",
+    "ls -a": "$ ls -a",
+    "ls /": "$ ls /",
+
+    "pwd": "$ pwd",
+    "cd": ["$ cd ..", "$ cd ./sub1.sub2"],
+    "cat display": ["$ cat > text.txt", "$ cat text.txt os.txt"],
+    "cat create": "$ cat text.txt",
+    "cp": "$ cp text.txt ./sub1/sub2",
+    "mv": "$ mv text.txt ./sub1/sub2",
+    "rm": "$ rm os.txt",
+    "mkdir": "$ mkdir os",
+    "rmdir": "$ rmdir os",
+
+    "chmod": "$ chmod ugo+x text.txt",
+    "chmod abb": {
+        "category": {
+            "user": "u-",
+            "group": "g-",
+            "others": "o-",
+            "all": "a-"
+        },
+        "operation": {
+            "assign permission": "+",
+            "remove permission": "-",
+            "assign absolute permission": "="
+        },
+        "permission": {
+            "read": "r-",
+            "write": "w-",
+            "execute": "x-"
+        }
+    },
+
+    "date": "",
+    "clear": "",
+    "man": "",
+    "wc": ""
+}
