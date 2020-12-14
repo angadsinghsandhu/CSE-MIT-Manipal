@@ -20,8 +20,25 @@
     "mkdir": "create a directory",
     "rmdir": "remove a directory",
     "chmod": "change the permision property of a file",
-    "date": "",
-    "clear": "",
-    "man": "",
-    "wc": ""
+    "date": "gives the internal clock time",
+    "clear": "clear up the screen",
+    "man": "used to get help on other commands",
+    "wc": "counts the lines, words and charaters of a file",
+
+    "output": "the output stream of the language",
+    "input" : "the input stream of the language",
+    "append": "the append operator can be used to append the standard output of a command to a file",
+    "document": "the document operator can be used to read commands from a file",
+
+    "wildcard": "this is ued to match specific characters of a file",
+    "pipe": "input/output streams can be executed individually using pipes",
+    "subsitutions": "here a command is executed and placed inside another command",
+    "sequence": "execute multiple commands, one after the other",
+    "condition": "execute binary oprations using output of files",
+
+    "head": "get the first 'n' lines in a file",
+    "tail": "get the last 'n' lines in a file",
+    "more": "get more information about a file",
+    "grep": "serach a word in a file",
+    "sort": "sort a file"
 }

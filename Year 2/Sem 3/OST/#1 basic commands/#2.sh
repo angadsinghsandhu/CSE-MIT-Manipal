@@ -1,0 +1,2 @@
+# executing
+date ; ls ; pwd

@@ -1,48 +1,100 @@
-{
-    "shell prompt": "$",
-    "echo": "$ echo 'welcome'",
-    "env var": "$ echo $USER",
-    "who": "$ who",
-    "who am i": "$ who am i",
+[
+    {
+        "type": "Common Shell Commands",
+        "shell prompt": "$",
+        "echo": "$ echo 'welcome'",
+        "env var": "$ echo $USER",
+        "who": "$ who",
+        "who am i": "$ who am i",
 
-    "ls": "$ ls",
-    "ls*" : "$ ls abc*",
-    "ls -I": "$ ls -I",
-    "ls -a": "$ ls -a",
-    "ls /": "$ ls /",
+        "ls": "$ ls",
+        "ls*" : "$ ls abc*",
+        "ls -I": "$ ls -I",
+        "ls -a": "$ ls -a",
+        "ls /": "$ ls /",
 
-    "pwd": "$ pwd",
-    "cd": ["$ cd ..", "$ cd ./sub1.sub2"],
-    "cat display": ["$ cat > text.txt", "$ cat text.txt os.txt"],
-    "cat create": "$ cat text.txt",
-    "cp": "$ cp text.txt ./sub1/sub2",
-    "mv": "$ mv text.txt ./sub1/sub2",
-    "rm": "$ rm os.txt",
-    "mkdir": "$ mkdir os",
-    "rmdir": "$ rmdir os",
+        "pwd": "$ pwd",
+        "cd": ["$ cd ..", "$ cd ./sub1.sub2"],
+        "cat display": ["$ cat > text.txt", "$ cat text.txt os.txt"],
+        "cat create": "$ cat text.txt",
+        "cp": "$ cp text.txt ./sub1/sub2",
+        "mv": "$ mv text.txt ./sub1/sub2",
+        "rm": "$ rm os.txt",
+        "mkdir": "$ mkdir os",
+        "rmdir": "$ rmdir os",
 
-    "chmod": "$ chmod ugo+x text.txt",
-    "chmod abb": {
-        "category": {
-            "user": "u-",
-            "group": "g-",
-            "others": "o-",
-            "all": "a-"
+        "chmod": "$ chmod ugo+x text.txt",
+        "chmod abb": {
+            "category": {
+                "user": "u-",
+                "group": "g-",
+                "others": "o-",
+                "all": "a-"
+            },
+            "operation": {
+                "assign permission": "+",
+                "remove permission": "-",
+                "assign absolute permission": "="
+            },
+            "permission": {
+                "read": "r-",
+                "write": "w-",
+                "execute": "x-"
+            }
         },
-        "operation": {
-            "assign permission": "+",
-            "remove permission": "-",
-            "assign absolute permission": "="
-        },
-        "permission": {
-            "read": "r-",
-            "write": "w-",
-            "execute": "x-"
+
+        "date": "$ data",
+        "clear": "$ clear",
+        "man": ["$ man date", "$ man clear"],
+        "wc": "$ wc text.txt",
+        "wc abb": {
+            "byte": "$ wc -c text.txt",
+            "char": "$ wc -m text.txt",
+            "line": "$ wc -l text.txt",
+            "word": "$ wc -w text.txt",
+            "default": "$ wc -lwc text.txt"
         }
     },
 
-    "date": "",
-    "clear": "",
-    "man": "",
-    "wc": ""
-}
+    {
+        "type": "Redirectional Operators",
+        "output": ">",
+        "output abb": "$ ls > text.txt",
+        "input": "<",
+        "input abb": "$ cat < text.txt",
+        "append": ">>",
+        "decument": "<<"
+    },
+
+    {
+        "type": "Shell Concepts",
+        "wildcard": {
+            "any": "*",
+            "single": "?",
+            "fixed": "[ijk]",
+            "range": "[x-z]",
+            "exclude": "[!ijk]",
+            "parts": "{part1, par2}"
+        },
+        "pipes": "$ ls | wc -l",
+        "substitute": ["``", "$ echo Today is `date`"],
+        "sequence": [";", "$ cd .. ; ls"],
+        "condition": {
+            "and": "&&",
+            "or": "||"
+        }
+    },
+
+    {
+        "type":"File Filters",
+        "head": "$ head -5 text.txt",
+        "tail": "$ tail -10 text.txt",
+        "more": "$ more text.txt",
+        "grep": "$ grep hi text.txt",
+        "sort": {
+            "default": "$ sort text.txt",
+            "reverse": "$ sort -r text.txt"
+        }
+        
+    }
+]
