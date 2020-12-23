@@ -1,3 +1,9 @@
+#******************************************************************************
+    
+                    #1 : First Lab Exersize (pg. 13)
+
+#*******************************************************************************
+
 # part 1
 mkdir home/sub1 home/sub2
 
@@ -27,10 +33,7 @@ ls -lL --count
 
 # part 7
 if cat file1.txt -o "this is file1"; then 
-echo "Success!";
-else 
-echo "Failure"; 
-fi
+echo cat file1.txt -o;
 
 # part 8
 wc -l info.txt

@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+int N,M,a[10][10],i,j;
+printf("enter the number of rows and column of a matrix");
+scanf("%d%d",&N,&M)
+printf("enter elements of the matrix")
+for(i=0;i<N;i++)
+    for(j=0;j<m;j++)
+        scanf("%d",&a[i][j]);
+armstrong(a,N,M);
+printf("the new matrix is :");
+for(i=0;i<N;i++)
+    {
+    printf("\n");
+    for(j=0;j<m;j++)
+        printf("%d\n",a[i][j]);
+    }
+return 0;
+}
+void armstrong(int a[10][10],int N,int M)
+{
+int sum,digit,num,i,j;
+for(i=0;i<N;i++)
+    for(j=0;j<m;j++)
+    {
+        sum=0;
+        num=a[i][j];
+        while(num!=0)
+        {
+        digit=num%10;
+        num=num/10;
+        sum=sum+digit*digit*digit;
+        }
+        if(sum==a[i][j])
+            a[i][j]=a[i][j]*a[i][j];
+    }
+}

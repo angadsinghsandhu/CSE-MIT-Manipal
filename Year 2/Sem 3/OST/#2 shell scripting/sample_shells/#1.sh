@@ -1,8 +1,10 @@
 #******************************************************************************
     
-                    #2 : Second Lab Exersize (pg. 14)
+                    #1 : First Sample Lab Exersize (pg. 15)
 
 #*******************************************************************************
 
-# executing
-date ; ls ; pwd
+# getting enviornment variables
+echo $HOME, $PATH
+echo $MAIL
+echo $USER, $SHELL, $TERM
