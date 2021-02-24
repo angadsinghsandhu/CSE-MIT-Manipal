@@ -1,63 +1,121 @@
+//stack_utils.h
+//stack_utils.h
+// #include <stdio.h>
+// #include <stdlib.h>
+
+#define MAX (100)
+#define TRUE (1)
+#define FALSE (0)
+#define SUCCESS (1)
+#define FAILED (0)
+
+typedef struct stack
+{
+    char item[MAX];
+    int top;
+} stack;
+int isEmpty(stack *);
+int isFull(stack *);
+int push(stack *, char);
+char pop(stack *);
+void display(stack *);
+stack *new_stack();
+
+int isEmpty(stack *s)
+{
+    if (s->top == -1)
+        return TRUE;
+    return FALSE;
+}
+
+int isFull(stack *s)
+{
+    if (s->top == MAX - 1)
+        return TRUE;
+    return FALSE;
+}
+
+int push(stack *s, char elem)
+{
+    if (isFull(s))
+        return FAILED;
+    s->item[++s->top] = elem;
+    return SUCCESS;
+}
+
+char pop(stack *s)
+{
+    if (isEmpty(s))
+        return FAILED;
+    return (s->item[s->top--]);
+}
+
+void display(stack *s)
+{
+    if (isEmpty(s))
+        return;
+    int i;
+    for (i = 0; i <= s->top; i++)
+        printf("%c ", s->item[i]);
+    printf("\n");
+}
+
+stack *new_stack()
+{
+    stack *s = (stack *)malloc(sizeof(stack));
+    s->top = -1;
+    return s;
+}
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "stack_utils.h"
 
-#define MAX 20
+int eval(char *);
 
-typrdef struct stack{
-    char item[MAX];
-    int max;
-    int top;
-} stack;
+int eval(char *exp)
+{
+    int i;
+    stack *s = new_stack();
 
-char calc(char sym, char opr_1, char opr_2){
-    int opr1 = opr_1 - '0';
-    int opr2 = opr_2 - '0';
-    int val;
-    char result;
+    for (i = strlen(exp) - 1; i > -1; i--)
+    {
+        if (exp[i] >= '0' && exp[i] <= '9')
+        {
+            push(s, exp[i]);
+        }
+        else if (exp[i] == '+' || exp[i] == '-' || exp[i] == '*' || exp[i] == '/' || exp[i] == '%')
+        {
+            int op1, op2;
+            op1 = pop(s) - '0';
+            op2 = pop(s) - '0';
 
-    if(sym == "^"){
-        val = opr1^opr2;
-        result = val + '0';
-        return result
-    } else if (sym == "/"){
-        val = opr1/opr2;
-        result = val + '0';
-        return result
-    } else if (sym == "*"){
-        val = opr1*opr2;
-        result = val + '0';
-        return result
-    } else if (sym == "-"){
-        val = opr1-opr2;
-        result = val + '0';
-        return result
-    } else if (sym == "+"){
-        val = opr1+opr2;
-        result = val + '0';
-        return result
+            int res;
+            if (exp[i] == '+')
+                res = op1 + op2;
+            else if (exp[i] == '-')
+                res = op1 - op2;
+            else if (exp[i] == '*')
+                res = op1 * op2;
+            else if (exp[i] == '/')
+                res = op1 / op2;
+            else if (exp[i] == '%')
+                res = op1 % op2;
+            push(s, res + '0');
+        }
     }
-
+    int res = pop(s) - '0';
+    free(s);
+    return (res);
 }
 
-int eval(char[] str){
-    int len = strlen(str);
-
-    
-}
-
-int main(){
-    char str[MAX];
-    int result = -1;
-    
-    prinrf("Enter Prefix Expression [max lenth 20] (using only single digits i.e. 0-9) : ");
-    scanf("%s", str);
-    printf("Orignal Expression : %s\n\n", str);
-
-    resut = eval(str);
-    printf("Evaluated Expression : %d", result);
+int main(int argc, char const *argv[])
+{
+    char *exp = (char *)calloc(20, sizeof(char));
+    printf("This method WILL only work on operands between 0-9\n");
+    printf("Enter an expression (in prefix): ");
+    scanf("%s", exp);
+    printf("Evaluated: %d\n", eval(exp));
     return 0;
 }
-
-
-

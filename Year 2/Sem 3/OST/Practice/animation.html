@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        animation
+    </title>
+</head>
+<body onload="rain()">
+    <style>
+        body { 
+            display: flex;               
+            justify-content: center;    
+        } 
+        .ball { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%;          
+            background-color: #FF5722;   
+        } 
+    </style>
+
+    <canvas id="myCanvas" height="300" width="300"></canvas>
+    <br>
+
+    <div>
+        <button id="btn1" onclick="getLoc('btn1')">btn1</button>
+        <button id="btn2" onclick="getLoc('btn2')">btn2</button>
+    </div>
+    <br>
+    <button style="margin: auto;" id="btn3" onclick="getLoc('btn2')">btn3</button>
+
+    <br><br><br>
+    <button id="greet" onclick="greet()">GERRTINGS</button>
+
+
+    <script>
+        // // PART-1
+        // function getLoc(btnName){
+        //     var btn = document.getElementById(btnName);
+        //     var pos = btn.getBoundingClientRect();
+        //     var txt = "X Coordinate is : " + pos.x + "\nY Coordinate is : " + pos.y;
+
+        //     alert(txt);
+        // }
+
+        // // PART-2
+        // function greet(){
+        //     document.write("<center><font size=7 style='color:blue'>");
+        //     var hr = new Date().getHours();
+
+        //     if(0<=hr && hr>12){
+        //         document.write("Good Morning");
+        //     } else if(12<=hr && hr>17){
+        //         document.write("Good Afternoon");
+        //     } else if(17<=hr && hr>24){
+        //         document.write("Good Evening");
+        //     }
+
+        //     document.write("</font></center>");
+        // }
+
+        // PART-3
+        var n = 1;
+        function rain() {
+            this.rain_len=5;
+            this.rain_angle = Math.PI/3;
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var x = Math.random() * 300;
+            var y = Math.random() * 300;
+            ctx.strokeStyle = "blue";
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x-Math.cos(this.rain_angle)*rain_len, y-Math.sin(this.rain_angle)*rain_len);
+
+            ctx.stroke();
+            n+=1;
+
+            if(n==500){
+                ctx.clearRect(0, 0, 1800, 600);
+                n=1;
+            }
+
+            var t = setTimeout(rain, 15)
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>The canvas element</h1>
+
+    <canvas id='myCanvas' width="300" height="300" style="border: 5px; border-color: black;">
+        Your Browser does not support Canvas
+    </canvas>
+
+    <div id='calc'></div>
+    <div id='type'>
+        <input type="text" id="inp"></input>
+        <input type="text" id="out"></input>
+        <button id="submit" onclick="check()" type="submit">Check</button>
+    </div>
+
+    <div>
+        <input type="radio" name="color" onchange="change()" id="red">RED</input>
+        <br>
+        <input type="radio" name="color" onchange="change()" id="blue">BLUE</input>
+        <br>
+        <input type="radio" name="color" onchange="change()" id="green">GREEN</input>
+    </div>
+
+    <br>
+
+    <input type="text" name="name" id="name" onkeyup="check_name()">
+        Name
+    </input>
+
+    <span id="namecheck"></span>
+
+    <script type="text/javascript">
+        // var canva = document.getElementById('myCanvas');
+        // var ctx = canva.getContext('2d');
+        
+        // PART-1
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(20, 20, 40, 30);
+
+        // PART-2
+        // // tranparency
+        // ctx.globalAlpha = 0.2;
+        // ctx.fillStyle = "blue";
+        // ctx.fillRect(0, 0, 200, 300);
+        // ctx.fillStyle = "green";
+        // ctx.fillRect(80, 80, 75, 50);
+
+        // PART-3
+        // ctx.beginPath();
+        // ctx.arc(100, 90, 50, 0, 2*Math.PI);
+        // ctx.stroke();
+
+
+        // // PART-4
+        // var r1 = document.getElementById("myCanvas")
+        // var rec1 = r1.getContext("2d");
+        // rec1.fillStyle = "orange";
+        // rec1.fillRect(10, 10, 100, 80);
+        
+        // var r2 = document.getElementById("myCanvas")
+        // var rec2 = r2.getContext("2d");
+        // rec2.fillStyle = "red";
+        // rec2.rotate(30*Math.PI/180);
+        // rec2.fillRect(10, 10, 100, 60);
+
+        // // PART-5
+        // var sum = 0;
+        // var num = prompt("Enter Number of Elements");
+        // var arr = Array();
+        // var n;
+        // var product = 1;
+        
+        // for(var i=0; i<num; i+=1){
+        //     n = prompt("Enter Number");
+        //     sum += parseInt(n);
+        //     product *= parseInt(n);
+        // }
+
+        // var output = "The Sum is : " + sum + "\nThe Product is : " + product;
+        // document.getElementById("calc").innerHTML = output;
+
+
+        // // PART-6
+        // function check(){
+        //     var input = document.getElementById("inp").value;
+        //     var output = document.getElementById("out");
+
+        //     if(input == "true" | input == "false" | input == "True" | input == "False")
+        //         output.value = "Boolean";
+        //     else if(input.match(/[A-z]/))
+        //         output.value = "String";
+        //     else
+        //         output.value = "Integer";
+        // }
+
+        // // PART-7
+        // var canvas = document.getElementById("myCanvas");
+        // var ctx = canvas.getContext("2d");
+
+        // ctx.beginPath();
+        // ctx.fillStyle = "yellow";
+        // ctx.arc(150, 150, 75, 0, 2*Math.PI, true);
+        // ctx.fill();
+        // ctx.moveTo(185, 150);
+        // ctx.arc(150, 150, 35, 0, Math.PI, false);
+        // ctx.moveTo(195, 125);
+        // ctx.arc(185, 125, 10, 0, 2*Math.PI, false);
+        // ctx.moveTo(120, 125);
+        // ctx.arc(110, 125, 10, 0, 2*Math.PI, false);
+
+        // ctx.stroke();
+
+        // // PART-8
+        // function change(){
+        //     var canva = document.getElementById("myCanvas");
+        //     var ctx = canva.getContext("2d");
+
+        //     if(document.getElementById("red").checked){
+        //         canva.style['background-color']='red';
+        //     } else if(document.getElementById("blue").checked) {
+        //         canva.style['background-color']='blue';
+        //     } else if(document.getElementById("green").checked){
+        //         canva.style['background-color']='green';
+        //     }
+        // }
+
+        // // PART-9
+        // function check_name(){
+        //     var name = document.getElementById("name").value;
+        //     if(name.match(/[a-z]/g)){
+        //         document.getElementById("namecheck").style["color"] = "red";
+        //         document.getElementById("namecheck").innerHTML = "NO";
+        //     } else {
+        //         document.getElementById("namecheck").style["color"] = "green";
+        //         document.getElementById("namecheck").innerHTML = "YES";
+        //     }
+        // }
+
+        // PART-10
+        
+
+    </script>
+</body>
+</html>
