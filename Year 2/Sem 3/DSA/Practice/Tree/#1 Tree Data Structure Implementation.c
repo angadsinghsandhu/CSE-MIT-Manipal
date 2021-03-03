@@ -21,7 +21,7 @@ struct BstNode *root = NULL;
 // function to create new Node
 struct BstNode *CreateNode(int data)
 {
-    struct BstNode *newNode = (struct BstNode *)malloc(sizeof(struct BstNode));
+    struct BstNode *newNode = (struct BstNode *) malloc(sizeof(struct BstNode));
     newNode->data = data;
     newNode->left = newNode->right = NULL;
     return newNode;
