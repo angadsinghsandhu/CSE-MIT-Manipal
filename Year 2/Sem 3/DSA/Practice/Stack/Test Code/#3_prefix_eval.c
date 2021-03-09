@@ -14,6 +14,7 @@ typedef struct stack
     char item[MAX];
     int top;
 } stack;
+
 int isEmpty(stack *);
 int isFull(stack *);
 int push(stack *, char);
@@ -105,7 +106,7 @@ int eval(char *exp)
             push(s, res + '0');
         }
     }
-    int res = pop(s) - '0';
+    int res = pop(s) + '0';
     free(s);
     return (res);
 }
