@@ -6,24 +6,11 @@ __Vectors
             DCD Reset_Handler
             ALIGN
             AREA mycode,CODE,READONLY
+            N1 DCD 4,3,2,1
+            N2 DCD 0,0,0,1
             ENTRY
             EXPORT Reset_Handler
 
-
-
-__Vectors
-	
-	        DCD 0X10001000
-	        DCD Reset_Handler
-
-	        AREA mydata,DATA,READWRITE
-DST         DCD 0
-	        AREA mycode,CODE,READONLY
-N1          DCD 4,3,2,1
-N2          DCD 0,0,0,1
-	        ENTRY
-	        EXPORT Reset_Handler
-	
 Reset_Handler
 	
 	        LDR R0,=N1
