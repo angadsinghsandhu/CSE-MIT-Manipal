@@ -1,4 +1,4 @@
-AREA RESET, DATA, READONLY
+    AREA RESET, DATA, READONLY
 	EXPORT __Vectors
 
 __Vectors
