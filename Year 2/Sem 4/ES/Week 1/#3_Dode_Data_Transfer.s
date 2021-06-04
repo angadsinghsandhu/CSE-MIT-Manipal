@@ -14,6 +14,7 @@ Reset_Handler
 	LDR R0,=SRC
 	LDR R1,=DST
 	MOV R2,#10
+	B L1
 L1  LDR R3,[R0],#4
 	STR R3,[R1],#4
 	SUBS R2,R2,#1
