@@ -6,10 +6,12 @@ unsignerd long LED = 0x00000010;
 // using port 4 to 11 [1 pin 4 operations]
 // [Pin0 for 0-15 is pin select 0, 16-31 is pin select 1]
 
-LPC_PINCON->PINSEL0 &= 0xFF0000FF;  // making sure bits 9-24 are 0
-LPC_GPIO0->FIODIR |= 0x00000FF0;    // making sure bits 5-12 ar e 1
+
 
 int main(void){
+    LPC_PINCON->PINSEL0 &= 0xFF0000FF;  // making sure bits 9-24 are 0
+    LPC_GPIO0->FIODIR |= 0x00000FF0;    // making sure bits 5-12 ar e 1
+    
     SystemInit();
     SystemCoreClockUpdate();
 

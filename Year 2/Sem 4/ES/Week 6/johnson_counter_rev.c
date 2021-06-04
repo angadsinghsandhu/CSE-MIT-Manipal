@@ -3,13 +3,13 @@
 unsigned int i,j;
 unsigned long LED = 0x00000010;
 
-LPC_PINCON->PINSEL0 &= 0xFF0000FF;
-LPC_GPIO0->FIODIR |= 0x000000FF;
-
 int main(void){
+    LPC_PINCON->PINSEL0 &= 0xFF0000FF;
+    LPC_GPIO0->FIODIR |= 0x000000FF;
+
     SystemInit();
     SystemCoreClockUpdate();
-    
+
     LED = 0x00000800;
 
     for(i=9; i>0; i--){
