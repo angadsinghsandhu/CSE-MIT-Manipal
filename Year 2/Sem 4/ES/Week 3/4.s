@@ -12,26 +12,31 @@ __Vectors
 
 Reset_Handler
 
-	LDR R6, =DST
-	MOV R2, #0
 	LDR R0, =SRC
+	LDR R6, =DST
 	LDR R1, [R0]
-UP	CMP R1, #0XA
+	MOV R2, #0
+	B UP
+
+UP	
+	CMP R1, #0xA
 	BCC STORE
-	SUB R1, #0XA
+	SUB R1, #0xA
 	ADD R2, #01
 	B UP
+
 STORE
-	ADD R1, #0X30
+	ADD R1, #0x30
 	STRB R1, [R6], #1
 	MOV R1, R2
 	MOV R2, #0
-	CMP R1, #0XA
+	CMP R1, #0xA
 	BCS UP
-	ADD R1, #0X30
+	ADD R1, #0x30
 	STRB R1, [R6]
-STOP 
-	B STOP
+
+STOP B STOP
+
 SRC DCD 0XFF
 	AREA mydata, DATA, READWRITE
 DST DCD 0
