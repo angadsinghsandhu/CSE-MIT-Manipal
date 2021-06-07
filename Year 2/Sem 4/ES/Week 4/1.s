@@ -5,9 +5,9 @@ __Vectors
     DCD 0x10001000
     DCD Reset_Handler
     AREA mydata, DATA, READONLY
-    VAL DCD 0x12345678
+VAL DCD 0x12345678
     AREA strvar, DATA, READWRITE
-    DST DCD 0x0
+DST DCD 0x0
     ALIGN
     AREA mycode, CODE, READONLY
     EXPORT Reset_Handler
@@ -20,15 +20,18 @@ Reset_Handler
     MOV R0, #0 
     MOV R4, #1 
     MOV R5, #10 
+    B MSK
+
 MSK AND R3, R1, #0xF 
     MUL R3, R3, R4
     ADD R0, R3
     MUL R4, R4, R5
+
     LSR R1, #4
     CMP R1, #0
     BNE MSK
+    
     STR R0, [R2]
 
-STOP 
-    B STOP
+STOP B STOP
     END
