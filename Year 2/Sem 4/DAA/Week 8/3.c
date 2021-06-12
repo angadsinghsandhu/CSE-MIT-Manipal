@@ -1,3 +1,4 @@
+// Q3
 #include<LPC17XX.h>
 
 unsigned int dig1,dig2,dig3,dig4; //dig1 corresponds to display in U8..
