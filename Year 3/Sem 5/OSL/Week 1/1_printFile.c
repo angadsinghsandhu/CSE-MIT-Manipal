@@ -20,11 +20,11 @@ int main(int argc, char const *argv[]) {
 
 	}
 
-	// if(fd=(open(argv[2],O_RDONLY))==-1)
-	// {
-	// 	printf("File is not there");
-	// 	exit(1);
-	// }
+	if(fd=(open(argv[2],O_RDONLY))==-1)
+	{
+		printf("File is not there");
+		exit(1);
+	}
 
 	while((read(fd,&chr,1))>0) {
 		if(chr!='\n') {
