@@ -2,4 +2,4 @@
 
 ## Please consider contributing back to the Repo with your good code.
 
-### All other Questions are complete
+### All other Questions are complete.
