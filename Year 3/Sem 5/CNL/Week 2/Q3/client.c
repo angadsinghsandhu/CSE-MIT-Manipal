@@ -1,44 +1,84 @@
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <stdio.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+/*
+Write a TCP concurrent client server program where server accepts integer array 
+from client and sorts it and returns it to the client along with process id.
+*/
+// TCP client side
+
 #include <unistd.h>
+#include <netdb.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-void main() 
+#include <arpa/inet.h>
+#include <string.h>
+#include <sys/socket.h>
+
+#define MAX 5
+#define PORT 10200
+#define SA struct sockaddr
+
+void clifunc(int sockfd)
 {
-    int sockfd;
-    int len;
-    struct sockaddr_in address;
-    struct tm * timeinfo;
-    int result;
-    char *reply;
-    int hour,mins,sec,pid;
-    /*  Create a socket for the client.  */
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    /*  Name the socket, as agreed with the server.  */
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr("127.0.0.1");
-    address.sin_port = 9734;
-    len = sizeof(address);
-    /*  Now connect our socket to the server socket. */
-    result = connect(sockfd, (struct sockaddr *)&address, len);
-    
-    if(result == -1)
-    {
-        perror("oops: client2");
-        exit(1);
-    }
-    
-    /*  We can now read/write via sockfd.  */
-    printf(" Sending request to get the time\n");
-    read(sockfd, &hour , 1);
-    read(sockfd, &mins , 1);
-    read(sockfd, &sec , 1);
-    read(sockfd, &pid , 1);
-    printf("%d:%d:%d", hour, mins, sec);
-    printf(" The process id is: %d",pid);
-    close(sockfd);
-    exit(0);
+   int buff[MAX];
+   int n;
+
+   bzero(buff, sizeof(buff));
+   printf("Enter the array : ");
+
+   for(int i=0;i<MAX;i++) scanf("%d",&buff[i]);
+
+   n = 0;
+   n=write(sockfd, buff, sizeof(buff));        
+   if(n==sizeof(buff))
+
+   {    
+       printf("Sent array succesfully:\n");
+   }
+
+   bzero(buff, sizeof(buff));
+   n=read(sockfd, buff, sizeof(buff));
+   if(n==sizeof(buff))
+   {    
+       printf("Received sorted array succesfully:");
+       for(int i=0;i<MAX;i++) printf("%d ",buff[i]);
+   }
+
+}
+
+
+int main()
+{
+   int sockfd, connfd;
+   struct sockaddr_in servaddr, cli;
+
+
+   sockfd = socket(AF_INET, SOCK_STREAM, 0);
+   if (sockfd == -1) {
+       printf("socket creation failed...\n");
+       exit(0);
+   }
+   else
+       printf("Socket successfully created..\n");
+
+   bzero(&servaddr, sizeof(servaddr));
+
+   // assign IP, PORT
+   servaddr.sin_family = AF_INET;
+   servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+   servaddr.sin_port = htons(PORT);
+
+   // connect the client socket to server socket
+   if (connect(sockfd, (SA*)&servaddr, sizeof(servaddr)) != 0) {
+       printf("connection with the server failed...\n");
+       exit(0);
+   }
+
+   else
+       printf("connected to the server..\n");
+
+   // function for client
+   clifunc(sockfd);
+
+   // close the socket
+   close(sockfd);
+
 }

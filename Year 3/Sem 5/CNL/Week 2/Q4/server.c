@@ -1,3 +1,12 @@
+/*
+mplement concurrent Remote Math Server  To perform arithmetic operations in the server 
+and display the result at the client. The client accepts  two integers  and anoperator 
+from the user and sends it to the server. The server then receives integers andoperator. 
+The server will performs the operation on integers and sends result back tothe client which 
+is displayed on the client screen. Then both the processes terminate.
+*/
+// server side
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
