@@ -1,3 +1,4 @@
+// Function designed for chat between client and server.
 // TCP Server program
 // server side
 
@@ -13,7 +14,6 @@
 #define MAX 80
 #define PORT 8080
 #define SA struct sockaddr
-// Function designed for chat between client and server.
 
 void servfunc(int sockfd)
 {
@@ -33,8 +33,7 @@ void servfunc(int sockfd)
 
 		// Read server message from keyboard in the buffer
 		n=0;
-		while ((buff[n++] = getchar()) != '\n')
-			;
+		while ((buff[n++] = getchar()) != '\n');
 		// and send that buffer to client
 		write(sockfd, buff, sizeof(buff));
 

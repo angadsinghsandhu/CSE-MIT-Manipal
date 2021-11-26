@@ -22,9 +22,9 @@ int main()
 
 	// Create a UDP Socket
 	servsockfd = socket(AF_INET, SOCK_DGRAM, 0);
+	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	servaddr.sin_port = htons(PORT);
-	servaddr.sin_family = AF_INET;
 
 	// bind server address to socket descriptor
 	bind(servsockfd, (struct sockaddr*)&servaddr, sizeof(servaddr));
