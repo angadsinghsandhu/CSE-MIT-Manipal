@@ -13,8 +13,8 @@
 void function(char* dir, int depth){ 
 
 	// insitializig our variables or hadnling files in LINUX
-	DIR* d; struct 
-	dirent* item; 
+	DIR* d; 
+	struct dirent* item; 
 	struct stat mystat; 
 	
 	// check to see if directory exists
