@@ -1,0 +1,66 @@
+<html>
+	<style>
+		table, th, td {
+		  border:1px solid black;
+		}
+	</style>
+
+	<head>
+		<title>A HTML Table Animation</title>
+
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".light").css("background-color", "#abdbe3");
+				$(".dark").css("background-color", "#063970");
+
+				var cnt = 0
+				$('#btn').click(function() {
+					cnt+=1;
+					if(cnt%2==0){
+						$("#tabDiv").animate({
+							left: '600px',
+							right: '700px'
+						});
+						console.log("right");
+					} else{
+						$("#tabDiv").animate({
+							left: '100px',
+							right: '200px'
+						});
+						console.log("left");
+					}
+				}); // end click
+			});
+		</script>
+
+	</head>
+
+	<body style="font-family:Arial">
+		
+		<h1>A Table</h1>
+
+		<button type="button" id="btn">Click Me to Flip</button><br>&nbsp;&nbsp;&nbsp;
+
+		<div id="tabDiv" style="position: absolute;">
+			<table>
+			  <tr>
+			    <td class="light">Company</td>
+			    <td class="dark">Contact</td>
+			    <td class="light">Country</td>
+			  </tr>
+			  <tr>
+			    <td class="dark">Alfreds Futterkiste</td>
+			    <td class="light">Maria Anders</td>
+			    <td class="dark">Germany</td>
+			  </tr>
+			  <tr>
+			    <td class="light">Centro comercial</td>
+			    <td class="dark">Francisco Chang</td>
+			    <td class="light">Mexico</td>
+			  </tr>
+			</table>
+		</div>
+	</body>
+</html>

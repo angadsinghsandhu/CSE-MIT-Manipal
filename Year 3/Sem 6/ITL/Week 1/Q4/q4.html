@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>
+			Bill Calculator
+		</title>
+
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+		
+		<script>
+			//cdn//
+			$(document).ready(function(){
+				$("#bill").on('click',function(){
+					Calculate();
+				});
+			});
+
+			function Calculate(){
+				var premium = CompPrem();
+				console.log(premium);
+
+				var devTypePrice = CalcCheckBox();
+
+				var quant=parseInt($("#quantity").val());
+
+				var result = (premium + devTypePrice)*quant;
+				$('#result').html("The result is : " + result);
+			}
+
+			function CompPrem(){
+				var selectedCompany;
+				var val = 0;
+
+				$("select.company-names").change(function () {  
+			        selectedCompany = $(this).children("option: selected").val(); 
+			        console.log(selectedCompany);
+			    }); 
+			    console.log(selectedCompany);
+
+			    if(selectedCompany == "hp"){
+			    	val = 5000;
+			    } else if (selectedCompany == "nokia"){
+			    	val = 1000;
+			    } else if (selectedCompany == "samsung"){
+			    	val = 8000;
+			    } else if (selectedCompany == "motorola"){
+			    	val = 3000;
+			    } else if (selectedCompany == "apple"){
+			    	val = 10000;
+			    }
+
+			    return val;
+			}
+
+			function CalcCheckBox(){
+				var val = 0
+
+				if($('#mobile').prop('checked')){
+					val += 50000;
+				}
+
+				if($('#laptop').prop('checked')){
+					val += 100000;
+				}
+
+				return val;
+			}
+		</script>
+	</head>
+
+	<body>
+	<div style="text-align:center">
+
+		<!-- dropdown -->
+		<label for="company-names">Choose a Company :</label>
+		<select name="company-names" id="company-names" class="company-names">
+			<!-- HP, Nokia, Samsung, Motorola, Apple -->
+			<option value="hp">HP</option>
+			<option value="nokia">Nokia</option>
+			<option value="samsung">Samsung</option>
+			<option value="motorola">Motorola</option>
+			<option value="apple">Apple</option>
+		</select>
+
+		<br /><br />
+
+		<!-- checkbox -->
+		Product Type :
+
+		<input type="checkbox" id="mobile" name="product" value="Mobile" />Mobile
+		<input type="checkbox" id="laptop" name="product" value="Laptop" />Laptop
+
+		<br /><br />
+
+		<!-- quantity field -->
+		Enter Quantity : <input type="text" id="quantity" placeholder="Enter number...">
+
+		<br /><br />
+
+		<!-- button -->
+		<input type="button" id="bill" value="Produce Bill">
+
+		<br /><br />
+		<br /><br />
+
+		<h2>
+			<div id="result"></div>
+		</h2>
+	
+	</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>The Hover Example</title>
+		
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+
+		<script type = "text/javascript" language = "javascript">
+			$(document).ready(function() {
+				$('div').hover(function () {
+						$(this).css({"background-color":"red"});
+					}, function () {
+						$(this).css({"background-color":"blue"});
+					}
+				);
+			}); 
+		</script>
+
+	</head>
+
+	<body>
+		
+		<div>
+			Helu (this glows)
+		</div>
+
+	</body>
+</html>

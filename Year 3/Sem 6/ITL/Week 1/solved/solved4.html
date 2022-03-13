@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>The Replace Example</title>
+		
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+
+		<script type = "text/javascript" language = "javascript">
+			$(document).ready(function() {
+				$("div").click(function () {
+					$(this).replaceWith("<h1>JQuery is Great</h1>");
+				});
+				$("#myimg").attr("src", "./trip.jpg");
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div>
+			<p title = "Bold and Brave">Click This image to be amazed</p>
+			<img id = "myimg" alt = "Sample image" />
+		</div>
+	</body>
+</html>
+
+

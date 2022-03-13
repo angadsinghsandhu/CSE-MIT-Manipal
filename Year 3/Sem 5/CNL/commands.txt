@@ -1,0 +1,143 @@
+
+
+
+=== LAB 1 ===
+{PC Commands}
+?			[get all commands]
+dhcp			[dhcp provides information such as ip address, network mask, gateway address]
+arp			[address resolution protocol, this protocol is in between Network Layer (ip addresses) and Data-Link Layer (mac addresses)]
+show arp		[get arp table]
+show ip			[get VPC address information]
+ip 192.168.2.3/24	[allocating IP to VPC]
+ping 192.168.2.4	[send packets to the given address]
+clear ip		[unset ip adddr]
+clear arp		[clear arp table]
+save			[saves all changes done in PC]
+
+
+("192.168.2.3" denotes the IP, "/24" denotes the mask, meaning that that initial 24 bits will all be 1s, 
+remaining 8 bits will be 0, together with IP and Mask the router can calculate the network address)
+
+[ /24 => 255.255.255.0 ]
+[ /25 => 255.255.255.128 ]
+[ /26 => 255.255.255.192 ]
+[ /27 => 255.255.255.224 ]
+[ /28 => 255.255.255.240 ]
+[ /29 => 255.255.255.248 ]
+[ /30 => 255.255.255.252 ]
+[ /31 => 255.255.255.254 ]
+[ /32 => 255.255.255.255 ]
+
+(out of all our allocated addresses to a subnet, 
+2 will be special, the first address that is 
+the nework address, and the last address that 
+is the broadcast address)
+
+(ip address : the actual address) 
+(network mask : to find the network addresss we need the address mask) 
+(gateway address : this is the edge router address, where we forward our packet)
+
+(network address : this is the address of the subnet that the packet is being generated in) 
+(broadcast address : if we want to send all the nodes some packet we send it to this address)
+
+(eg: addresses are from 192.168.2.1 to 192.168.2.255 (255 addresses), where the addresses
+192.168.2.1 and 192.168.2.255 will be reserved for special purposes)
+
+(without the use of a edge router, we can communicate within a subnet, we need gateway address 
+if we need to communicate ouside of our subnet)
+
+
+
+
+=== LAB 2 ===
+{PC Commands}
+ip 10.0.0.10 255.0.0.0 10.0.0.1		[full ip command with IP, MASK, GATE (ip of connected router interface)]
+show ip route				[diaplay all the available connections to the PC]
+
+{Router Commands}
+enable					[mostly not needed, but good init]
+conf t					[configure terminl, will take us into the priveledge mode]
+int f0/0				[inside conf t, interface, we go inside the interface mentioned next to the command]
+ip add 10.0.0.1 255.0.0.0		[ip address, inside interface, we configure the ip address of the interface]
+no shut					[keep the router open, convert it from down to up]
+exit					[go back from "conf t" mode or "interface" mode]
+end					[go back to base mode]
+show interfaces				[display all interface connections and IPs]
+ping 20.0.0.2				[check connectivity among routers]
+do wr					[save configuration]
+show ip route				[diaplay all the available connections to the R1]
+ip route 10.0.0.0 255.0.0.0 20.0.0.1	[creates a static link to network address (10.0.0.0), with mask (255.0.0.0) and next-hop address (20.0.0.1)]
+
+
+
+(router work on the network layer and its major 
+task is to reroute packages to other netorks)
+
+(each router interface has unique ip address)
+
+(the gateway address of a PC is the ip address 
+of the interface connected to it)
+
+(to find the network address we AND the PC ip with the mask, 
+hence (10.0.0.10) AND (255.0.0.0) gives us 
+(10.0.0.0), which is the network address)
+
+(for networks that are not directly connected to a PC, 
+we have to create a static route)
+
+
+
+
+=== LAB 3 ===
+
+
+
+=== LAB 4 ===
+{Router Commands}
+ip route 0.0.0.0 0.0.0.0 30.30.30.2		[default gateway router when incomming address does not match any entry then it is forwarded here]
+
+ip dns server					[making DNS server]
+ip host a.com 10.10.10.2			[making entries into dns server, wih domain name and corresponding IP]
+
+ip domain lookup				[making all router look for a dns server/router]
+ip name-server 30.30.30.2			[adding IP of DNS server]
+
+{PC Commands}
+ip dns 30.30.30.2				[in PC1, mentioning the IP address of dns server]
+ping a.com					[ping to address using domain]
+
+
+(int the routing table the default gateway is represented as S*)
+
+
+
+=== LAB 5 ===
+{Router Commands}
+do show ip route			[display the routing table]
+do show ip int				[display the interfaces table]
+
+ip dhcp pool lan1			[creating pool of name "lan1"]
+network 20.20.20.0 255.255.255.0	[defining network range]
+default-router 20.20.20.1		[creating default gateway, where requests that are not understood are sent]
+dns-server 30.30.30.1			[creating dns server, in dchp server]
+
+ip helper-address 30.30.30.1		[in f0/0 of in between router, creating relay routers for dchp server]
+
+{PC Commands}
+show dhcp				[configure the dhcp server on PCs]
+
+
+
+(router c3745 will act both as a DNS and DHCP server)
+(c7200 does not support dns server)
+
+
+
+=== LAB 6 ===
+{Router Commands}
+interface f0/0.1			[here the ".1" denotes a sub-interfae]
+encapsulation dot1Q 1			[loading sub-interface and setting tag as 1 i.e. ".1"]
+
+
+
+(for creating VLANs, we need to configure special ports and tag them with thir VLAM ID)

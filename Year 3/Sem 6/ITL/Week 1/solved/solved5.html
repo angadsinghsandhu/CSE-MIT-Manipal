@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>The Button Example</title>
+		
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+
+		<script type = "text/javascript" language = "javascript">
+			$(document).ready(function() {
+				$('#button').click(function() {
+					$(this).val("Stop that!");
+				}); // end click
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id = "mydiv">
+			Click on this to see a dialogue box.
+			<input type="button" id="button">
+		</div>
+	</body>
+</html>

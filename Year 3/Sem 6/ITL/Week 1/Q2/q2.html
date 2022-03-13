@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>
+			Calculator
+		</title>
+
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+		
+		<script>
+			//cdn//
+			$(document).ready(function(){
+				$("#btnAdd").on('click',function(){
+					Add();
+				});
+				$("#btnSubstract").on('click',function(){
+					Substract();
+				})
+				$("#btnMultiply").on('click',function(){
+					Multiply();
+				})
+				$("#btnDivide").on('click',function(){
+					Divide();
+				})
+			});
+
+			function Add(){
+				var no1=parseInt($("#txtNo1").val());
+				var no2=parseInt($("#txtNo2").val());
+				var result =no1+no2;
+				$('#divResult').html("The result is " + result);
+			}
+
+			function Substract(){
+				var no1=parseInt($("#txtNo1").val());
+				var no2=parseInt($("#txtNo2").val());
+				var result =no1-no2;
+				$('#divResult').html("The result is " + result);
+			}
+
+			function Multiply(){
+				var no1=parseInt($("#txtNo1").val());
+				var no2=parseInt($("#txtNo2").val());
+				var result =no1*no2;
+				$('#divResult').html("The result is " + result);
+			}
+
+			function Divide(){
+				var no1=parseInt($("#txtNo1").val());
+				var no2=parseInt($("#txtNo2").val());
+				var result =no1/no2;
+				$('#divResult').html("The result is " + result);
+			}
+		</script>
+	</head>
+
+	<body>
+	<div style="text-align:center">
+	<H2>CALCULATOR <br><br><br>
+	First Number <input type="text" id="txtNo1" placeholder="Enter first number"><br><br><br>
+	Second Number <input type="text" id="txtNo2" placeholder="Enter second number"><br><br><br>
+	<input type="button" id="btnAdd" value="+">
+	<input type="button" id="btnSubstract" value="-">
+	<input type="button" id="btnMultiply" value="x">
+	<input type="button" id="btnDivide" value="/">
+	</H2>&nbsp;&nbsp;&nbsp;
+
+	<div id="divResult"></div>
+	</div>
+	</body>
+</html>

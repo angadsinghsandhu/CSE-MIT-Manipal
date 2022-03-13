@@ -1,0 +1,78 @@
+<!-- <script type = "text/javascript" src = "../../jquery-3_6_0.js"></script> -->
+<html>
+<head>
+<title> Q1 </title>
+<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+</script>
+<style>
+#div1 {
+position: relative;
+}
+
+#div2 {
+position: relative;
+left: 50%;
+right: 50%;
+top: 50px;
+}
+</style>
+<script>
+$(document).ready(function() {
+$("tr:even").css("background-color", "bisque");
+$("tr:odd").css("background-color", "mediumturquoise");
+$("#b1").click(function() {
+$("#div1").animate({
+"left": "+=50px"
+}, "fast",
+() => {
+});
+});
+$("#b2").click(function() {
+$("#div1").animate({
+"left": "-=50px"
+}, "slow",
+() => {
+});
+});
+});
+</script>
+</head>
+
+
+
+
+
+<body>
+<div id="div1">
+<table id="t1" width=500px>
+<tr>
+<td> Hello </td>
+<td> And </td>
+<td> Welcome </td>
+</tr>
+<tr>
+<td> To </td>
+<td> Manipal </td>
+<td> Hope </td>
+</tr>
+<tr>
+<td> You </td>
+<td> Enjoy </td>
+<td> :) </td>
+</tr>
+</table>
+<br>
+<img src="mahe.jpg" alt="Photo Nahi Hai Apke Paas Toh Dikhega Kaise" width="500" height="500" id=img1>
+<br>
+</div>
+<div id="div2">
+
+
+
+
+
+<button id="b2"> Move Left </button>
+<button id="b1"> Move Right </button>
+</div>
+</body>
+</html>

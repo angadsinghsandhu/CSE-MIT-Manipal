@@ -1,0 +1,31 @@
+<html>
+		<head>
+		<title>The Radio Button Example</title>
+
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#btnSubmit').click(function () {
+					var result = $('input[type="radio"]:checked');
+					if (result.length > 0) {
+						$('#divResult').html(result.val() + " is checked");
+					} else {
+						$('#divResult').html("No radio button checked");
+					}
+				});
+			});
+		</script>
+
+	</head>
+
+	<body style="font-family:Arial">
+		Gender :
+		<input type="radio" name="gender" value="Male">Male
+		<input type="radio" name="gender" value="Female">Female
+		<input id="btnSubmit" type="submit" value="submit" />
+		<div id="divResult">
+
+		</div>
+	</body>
+</html>

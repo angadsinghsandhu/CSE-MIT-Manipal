@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>The Image Example</title>
+		
+		<script type = "text/javascript" src = "../../jquery-3_6_0.js"></script>
+
+		<script type = "text/javascript" language = "javascript">
+			$(document).ready(function() {
+				var title = $("p").attr("title");
+				$("#divid").text(title);
+				$("#myimg").attr("src", "./trip.jpg");
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div>
+			<p title = "Bold and Brave">This is first paragraph.</p>
+			<p id = "myid">This is second paragraph.</p>
+			<div id = "divid"></div>
+			<img id = "myimg" alt = "Sample image" />
+		</div>
+	</body>
+</html>
+
