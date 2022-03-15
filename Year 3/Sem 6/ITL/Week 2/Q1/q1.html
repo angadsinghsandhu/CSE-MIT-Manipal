@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Student bio data </title>
+ 
+<meta charset="utf-8">
+
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+
+</head>
+
+<body>
+
+  
+  <div class="container">
+    <h1> All the information about students </h1>
+    <form>
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      
+      <p>Please select your gender:</p>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+      
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br>
+      
+      <br> 
+      
+      <p>Table for the information about school</p>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name od Student</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <br>
+      <input type="checkbox" id="School1" name="first school" value="BRP">
+      <label for="School1"> I Accept</label><br/>
+      <input type="submit" value="Submit">
+      
+    </form>
+  </div>
+    
+</body>
+</html>
