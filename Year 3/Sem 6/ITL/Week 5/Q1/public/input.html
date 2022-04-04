@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+<h1>Student Details</h1>
+<form action="student" method="POST">
+    {% csrf_token %}
+
+    Name: <input type="text" name="name"><br><br>
+    Date of Birth: <input type="text" name="dob"><br><br>
+    Address: <input type="text" name="address"><br><br>
+    Contact: <input type="text" name="contact"><br><br>
+    Email-Id: <input type="email" name="email"><br><br>
+
+    <h3>Marks (out of 100)</h3>
+    English: <input type="number" name="eng"><br><br>
+    Physics: <input type="number" name="phy"><br><br>
+    Chemistry: <input type="number" name="chem"><br><br>
+
+    <input type="submit">
+
+</form>
+
+{% endblock %}
+

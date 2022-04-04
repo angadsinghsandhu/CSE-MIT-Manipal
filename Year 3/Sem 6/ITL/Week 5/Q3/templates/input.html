@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Addition</h1>
+<form action="calc" method="POST">
+    {% csrf_token %}
+
+    Enter first number: <input type="text" name="num1"><br><br>
+    Enter second number: <input type="text" name="num2"><br><br>
+
+    <select name="dropdown">
+        <option selected="selected" disabled>Objects on page:</option>
+                <option value="+">Add</option>
+                <option value="-">Subtract</option>
+                <option value="*">Multiply</option>
+                <option value="/">Divide</option>
+        </select>
+
+    <input type="submit">
+</form>
+
+<h1> Result = {{result}} </h1>
+
+{% endblock %}

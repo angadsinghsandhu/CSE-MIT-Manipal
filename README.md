@@ -29,13 +29,27 @@ BaseDir
 |   |   └─── DSA (C Code)
 |   |   └─── DSD (Verilog Code)
 |   |   └─── OOP (Java Code)
+|   |   └─── OST (Sh, HTML Code)
 |   |
 |   └─── Sem 4
+|       |
+|       └─── DAA (C Code)
+|       └─── DBS (SQL Code)
+|       └─── ES  (Assembly Code)
 │   
 └───Year 3
 |   |
 |   └─── Sem 5
+|   |   |
+|   |   └─── CD  (C Code)
+|   |   └─── CN  (C Code)
+|   |   └─── OS  (C Code)
+|   |
 |   └─── Sem 6
+|       |
+|       └─── DS   (Python Code)
+|       └─── IT   (HTML, Django Code)
+|       └─── PCAP (C Code)
 │   
 └───Year 4
 |   |

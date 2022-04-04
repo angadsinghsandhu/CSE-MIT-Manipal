@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Addition</h1>
+<form action="add" method="POST">
+    {% csrf_token %}
+
+    {% comment %} TEXT {% endcomment %}
+
+    Enter Poster Text: <input type="text" name="text"><br><br>
+    
+    <select name="img">
+        <option selected="selected" disabled>Select Image</option>
+                <option value="https://static.scientificamerican.com/sciam/cache/file/B138306C-B6BE-40DB-925471A06A9DEE3A_source.jpg?w=590&h=800&57086BDA-4B79-4176-BFF86024FCB0CA97">trees</option>
+                <option value="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max">mountains</option>
+        </select>
+
+    <select name="bg_color">
+        <option selected="selected" disabled>Select Backgroung Color</option>
+                <option value="#FFFF00">yellow</option>
+                <option value="#0000FF">blue</option>
+        </select>
+
+    <select name="font_size">
+        <option selected="selected" disabled>Select Text Font SIze</option>
+                <option value="12">12 px</option>
+                <option value="18">18 px</option>
+        </select>
+
+    <select name="text_color">
+        <option selected="selected" disabled>Select Text Color</option>
+                <option value="#000000">black</option>
+                <option value="#800080">purple</option>
+        </select>
+
+
+    {% comment %} TITLR {% endcomment %}
+
+    Enter Poster Title: <input type="text" name="title"><br><br>
+
+    <select name="title_size">
+        <option selected="selected" disabled>Select Title Font SIze</option>
+                <option value="20">20 px</option>
+                <option value="26">26 px</option>
+        </select>
+
+    <select name="title_font">
+        <option selected="selected" disabled>Select Text Font Family</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Ariel">Ariel</option>
+        </select>
+
+    <input type="submit">
+</form>
+
+{% endblock %}

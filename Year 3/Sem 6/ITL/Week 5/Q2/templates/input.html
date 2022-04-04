@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Employee Details</h1>
+<form action="emp" method="POST">
+    {% csrf_token %}
+
+    <div class="dropdown">
+        <button class="dropbtn" type="button" name="choice">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="">12</a>
+          <a href="">32</a>
+          <a href="">83</a>
+          <a href="">96</a>
+        </div>
+      </div>
+    <br><br>
+
+    Date of Joining: <input type="text" name="date"><br><br>
+    
+    Am I eligible for Promotion: <input type="submit">    {{result}}
+</form>
+
+{% endblock %}
