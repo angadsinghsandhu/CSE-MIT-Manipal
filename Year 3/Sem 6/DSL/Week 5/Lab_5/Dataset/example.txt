@@ -1,0 +1,50 @@
+2012-07-16	15:43	Las Vegas	Men's Clothing	208.97	Visa
+2012-06-11	16:17	Miami	Crafts	84.11	Amex
+2012-10-17	15:30	Tucson	Crafts	489.93	Cash
+2012-10-25	15:01	San Francisco	Men's Clothing	388.3	Visa
+2012-07-13	09:01	Dallas	Consumer Electronics	145.63	Cash
+2012-11-06	13:02	Tampa	Garden	353.23	MasterCard
+2012-09-07	12:58	Washington	Women's Clothing	481.31	MasterCard
+2012-08-05	16:34	San Jose	DVDs	492.8	Discover
+2012-04-22	13:12	Newark	Consumer Electronics	410.37	Visa
+2012-10-19	11:35	Memphis	Garden	354.44	Discover
+2012-10-10	13:17	Jersey City	Books	369.07	Amex
+2012-04-27	11:54	Plano	Women's Clothing	4.65	Cash
+2012-08-28	14:56	Buffalo	Video Games	337.35	Discover
+2012-09-17	13:09	Louisville	Music	213.64	Discover
+2012-02-24	12:05	Miami	Women's Clothing	154.64	Cash
+2012-01-02	10:04	Los	Angeles Pet Supplies	164.5	Discover
+2012-11-15	15:46	Birmingham	Men's Clothing	1.64	Cash
+2012-03-16	11:18	Mesa	Toys	13.79	Visa
+2012-06-25	10:05	Wichita	Consumer Electronics	158.25	Amex
+2012-04-05	17:03	Indianapolis	Pet Supplies	152.77	Amex
+2012-11-08	15:19	San Bernardino	Video Games	332.43	Discover
+2012-08-08	10:09	Indianapolis	Health and Beauty	464.36	Amex
+2012-03-02	09:25	Stockton	Men's Clothing	180.61	Discover
+2012-02-27	16:12	Austin	Health and Beauty	48.09	Visa
+2012-12-29	16:56	Buffalo	Garden	386.56	Amex
+2012-03-20	09:02	Santa Ana	Books	2.75	Amex
+2012-10-30	11:52	Gilbert	DVDs	11.31	Amex
+2012-02-03	11:02	New York	DVDs	221.35	Visa
+2012-07-26	16:16	Corpus Christi	Health and Beauty	157.91	Amex
+2012-07-20	11:46	Riverside	Video Games	349.41	Visa
+2012-10-04	12:25	Chicago	Children's Clothing	364.53	MasterCard
+2012-02-04	11:53	Fremont	Video Games	404.17	Cash
+2012-05-31	14:43	Rochester	Video Games	460.39	Amex
+2012-05-25	16:11	Raleigh	Computers	61.22	MasterCard
+2012-05-11	12:39	Chicago	Pet Supplies	431.73	Cash
+2012-04-07	11:39	Cincinnati	Computers	288.32	Discover
+2012-04-18	16:57	Rochester	Consumer Electronics	342.62	Amex
+2012-12-19	10:12	Pittsburgh	Books	498.29	Cash
+2012-01-21	14:50	Rochester	Cameras	485.71	MasterCard
+2012-11-15	09:23	Glendale	Video Games	14.09	Amex
+2012-01-07	14:20	Cincinnati	Crafts	1.41	Amex
+2012-10-20	14:53	Irvine	Video Games	15.19	Discover
+2012-03-04	12:11	Boston	Video Games	397.21	Visa
+2012-01-11	09:04	Scottsdale	Garden	214.32	Discover
+2012-08-11	10:57	Atlanta	Garden	189.22	Visa
+2012-05-22	13:08	Cincinnati	Men's Clothing	443.78	Visa
+2012-01-11	17:20	Lubbock	Garden	27.68	Cash
+2012-01-16	13:31	Cincinnati	Cameras	129.6	Cash
+2012-02-10	10:39	Santa Ana	Computers	282.13	MasterCard
+2012-03-22	09:57	Aurora	DVDs	82.38	Discover

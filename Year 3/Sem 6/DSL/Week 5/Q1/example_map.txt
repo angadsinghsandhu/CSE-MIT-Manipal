@@ -1,0 +1,50 @@
+Books	1
+Books	1
+Books	1
+Cameras	1
+Cameras	1
+Children's Clothing	1
+Computers	1
+Computers	1
+Computers	1
+Consumer Electronics	1
+Consumer Electronics	1
+Consumer Electronics	1
+Consumer Electronics	1
+Crafts	1
+Crafts	1
+Crafts	1
+DVDs	1
+DVDs	1
+DVDs	1
+DVDs	1
+Garden	1
+Garden	1
+Garden	1
+Garden	1
+Garden	1
+Garden	1
+Health and Beauty	1
+Health and Beauty	1
+Health and Beauty	1
+Men's Clothing	1
+Men's Clothing	1
+Men's Clothing	1
+Men's Clothing	1
+Men's Clothing	1
+Music	1
+Pet Supplies	1
+Pet Supplies	1
+Pet Supplies	1
+Toys	1
+Video Games	1
+Video Games	1
+Video Games	1
+Video Games	1
+Video Games	1
+Video Games	1
+Video Games	1
+Video Games	1
+Women's Clothing	1
+Women's Clothing	1
+Women's Clothing	1

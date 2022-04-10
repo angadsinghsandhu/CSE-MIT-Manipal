@@ -8,8 +8,7 @@ s.listen()
 print("\nWaiting for incoming connections...\n")
 
 conn, addr = s.accept()
-print("Received connection from ", addr[0], 
-"(", addr[1], ")\n")
+print("Received connection from ", addr[0], "(", addr[1], ")\n")
 s_name = conn.recv(1024).decode()
 print(s_name, "has connected to the chat room")
 print("\nEnter 'bye' to exit chat room\n")

@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 		printf("Sending -- %s -- to process 1\n",word);
 		MPI_Ssend(&word,sizeof(word),MPI_CHAR,1,0,MPI_COMM_WORLD);
 
-		MPI_Recv(&word,sizeof(word),MPI_CHAR,1,0,MPI_COMM_WORLD,&status);
+		MPI_Recv(&word,sizeof(word),MPI_CHAR,1,1,MPI_COMM_WORLD,&status);
 		printf("Received -- %s -- from process 1\n",word);
 	}
 
@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
     	printf("String after toggle each characters: %s\n", word);
 
 		printf("Sending -- %s -- to process 0\n",word);
-		MPI_Ssend(&word,sizeof(word),MPI_CHAR,0,0,MPI_COMM_WORLD);
+		MPI_Ssend(&word,sizeof(word),MPI_CHAR,0,1,MPI_COMM_WORLD);
 	}
 	MPI_Finalize();
 }

@@ -7,12 +7,6 @@ int main(int argc, char* argv[])
 	int size, rank;
 	int x = 10,y = 5,ans=0;
 
-	// if(argc != 4)
-	// {
-	// 	printf("Code is meant to run with 4 process only.\n");
-	// 	exit(0);
-	// }
-
 	MPI_Init(&argc, &argv);
 
 	MPI_Comm_size(MPI_COMM_WORLD,&size);
