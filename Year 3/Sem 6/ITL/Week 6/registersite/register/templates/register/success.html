@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Success</title>
+    </head>
+    <body>
+        {% if context %}
+        Welcome {{ context.username }}<br><br>
+        Email: {{ context.emailid }}<br>
+        Contact No: {{ context.contactno }}<br>
+        {% endif %}
+    </body>
+</html>

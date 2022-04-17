@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Choose</title>
+    </head>
+    <body>
+        <form action="/total/" method="post">
+            {% csrf_token %}
+
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Total</title>
+    </head>
+    <body>
+        {% if context %}
+        {{ context.company }} {{ context.item }} <br><br>
+        Total = {{ context.total }}
+        {% endif %}
+    </body>
+</html>

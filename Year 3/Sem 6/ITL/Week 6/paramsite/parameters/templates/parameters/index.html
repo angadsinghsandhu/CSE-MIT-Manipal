@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <form action="/newpage/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

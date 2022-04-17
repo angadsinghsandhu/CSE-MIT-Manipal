@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>SecondPage</title>
+    </head>
+    <body>
+        {% if context %}
+        Name: {{ context.name }}
+        Roll: {{ context.roll }}
+        Subject: {{ context.subject}}
+        {% endif %}
+        <form action="." method="post">
+            {% csrf_token %}
+            <input type="submit" value="Go Back">
+        </form>
+    </body>
+</html>
