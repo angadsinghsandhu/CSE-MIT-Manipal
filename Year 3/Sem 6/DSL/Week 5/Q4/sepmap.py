@@ -2,12 +2,14 @@ import sys
 
 def read_input(file):
     for line in file:
-        return line.split()
+        yield line.strip().split(',')
 
-separator = "\t"
+def main(separator="\t"):
+    data = read_input(sys.stdin)
+    for words in data:
+        for word in words:
+            print("%s%s%d"%(word, separator, 1))
 
-data = read_input(sys.stdin)
-
-for words in data:
-    for word in words:
-        print("{}{}{}".format(word, separator, 1))
+if __name__ == '__main__':
+    sep = sys.argv[1]
+    main(separator=sep)

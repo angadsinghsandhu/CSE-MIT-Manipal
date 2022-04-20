@@ -1,7 +1,3 @@
-sh = '''
-echo "Time is gold Time is Time gold" | python3 sepmap.py | python3 sepred.py
-'''
-
 import sys
 from itertools import groupby
 from operator import itemgetter
@@ -10,15 +6,15 @@ def read_mapper_output(file, separator='\t'):
     for line in file:
         return line.rstrip().split(separator, 1)
 
-separator = '\t'
+def main(separator="\t"):
+    data = read_mapper_output(sys.stdin, separator=separator)
+    for current_word, group in groupby(data, itemgetter(0)):
+        try:
+            total_count = sum(int(count) for current_word, count in group)
+            print("%s%s%d"%(current_word, separator, total_count))
+        except ValueError:
+            pass
 
-data = read_mapper_output(sys.stdin, separator=separator)
-
-for current_word, group in groupby(data, itemgetter(0)):
-    try:
-        pass
-    except ValueError:
-        pass
-
-
-
+if __name__ == '__main__':
+    sep = sys.argv[1]
+    main(separator=sep)

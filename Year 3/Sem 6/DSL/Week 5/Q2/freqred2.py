@@ -1,20 +1,9 @@
-from __future__ import print_function
 import sys
-
-# cd into current directory
-
-## choose output path
-path = "./covid_19_data_map.txt"
-# path = "./example_map.txt"
-# path = "./german_credit_map.txt"
-# path = "./heart_disease_data_map.txt"
-
-fd = open(path, "r")
 
 mostFreq = []
 currentMax = -1
 
-for line in fd:
+for line in sys.stdin:
     word, count = line.strip().split('\t', 1)
     count = int(count)
 

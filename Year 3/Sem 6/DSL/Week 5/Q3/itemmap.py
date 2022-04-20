@@ -1,8 +1,8 @@
 import fileinput
 
 for line in fileinput.input():
-    data = line.strip().split("\t")
+    data = line.strip().split(",")
 
-    if len(data) == 6:
-        date, time, location, item, cost, payment = data
-        print("{}\t{}".formay(payment, cost))
+    if len(data) == 3:
+        credibility, creditamount, durationofcredit = data
+        print("{}\t{}".format(credibility, creditamount))

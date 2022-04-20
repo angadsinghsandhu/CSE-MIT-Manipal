@@ -1,7 +1,3 @@
-sh = '''
-cat home/dir/eample.txt | python3 costmap.py | sort | python3 costred.py
-'''
-
 import fileinput
 
 max_val = 0
@@ -15,7 +11,11 @@ for line in fileinput.input():
         continue
 
     current_key, current_value = data
-
+    try:
+        v = float(current_value)
+    except ValueError:
+        continue
+    
     if old_key and (old_key != current_key):
         print("{}\t{}".format(old_key, max_val))
         old_key = current_key
@@ -26,5 +26,5 @@ for line in fileinput.input():
     if float(current_value) > float(max_val):
         max_val = float(current_value)
 
-    if old_key != None:
-        print("{}\t{}".format(old_key, max_val))
+if old_key != None:
+    print("{}\t{}".format(old_key, max_val))
