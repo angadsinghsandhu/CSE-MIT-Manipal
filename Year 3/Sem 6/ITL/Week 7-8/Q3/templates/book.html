@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Django Blog</title>
+</head>
+
+<body>
+    <h1>Add Info</h1>
+    <form action="create/" method=post>{% csrf_token %}
+        <h3>Author Info</h3>
+        <table>{{ author_form }}</table><br>
+
+        <h3>Publisher Info</h3>
+        <table>{{ publisher_form }}</table><br>
+
+        <h3>Book Info</h3>
+        <table>{{ book_form }}</table><br>
+        <input type=submit>
+    </form>
+
+    <hr><hr>
+    {% for author in authors %}
+        <h2>{{ author.fname }} {{ author.lname }}</h2>
+        <p>email : {{ author.email }}</p>
+        <hr>
+    {% endfor %}
+    <br><br>
+    <hr><hr>
+    {% for book in books %}
+        <h2>{{ book.title }}</h2>
+        <p>date : {{ book.date }}</p>
+        <h3>authors : {{ book.authors }}</h3>
+        <h3>publisher : {{ book.publisher }}</h3>
+        <hr>
+    {% endfor %}
+    <br><br>
+    <hr><hr>
+    {% for pub in publishers %}
+        <h2>{{ pub.name }}</h2>
+        <p>address : {{ pub.street }}, {{ pub.city }}, {{ pub.state }}, {{ pub.country }}</p>
+        <p>url : {{ pub.url }}</p>
+        <hr>
+    {% endfor %}
+    <br><br>
+    <hr><hr>
+    
+</body>
+
+</html>

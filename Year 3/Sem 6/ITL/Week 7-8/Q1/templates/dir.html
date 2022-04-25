@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Django Blog</title>
+</head>
+
+<body>
+    <form action="create/" method=post>{% csrf_token %}
+        <table>{{ cat_form }}</table><br>
+        <table>{{ page_form }}</table><br>
+        <input type=submit>
+    </form>
+
+    <hr>
+    {% for category in categories %}
+        <p>{{ category.index }}.</p>
+        <h2>{{ category.name }}</h2>
+        <p>visits : {{ category.visits }}</p>
+        <p>likes : {{ category.likes }}</p>
+        <hr>
+    {% endfor %}
+    <br><br>
+    {% for page in pages %}
+        <p>{{ page.index }}.</p>
+        <h2>{{ page.title }}</h2>
+        <p>category : {{ page.category }}</p>
+        <p>url : {{ page.url }}</p>
+        <p>views : {{ page.views }}</p>
+        <hr>
+    {% endfor %}
+</body>
+
+</html>
