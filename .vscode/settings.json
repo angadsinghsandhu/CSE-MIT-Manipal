@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "johnson_counter_REVERSED.C": "cpp"
+        "johnson_counter_REVERSED.C": "cpp",
+        "xiosbase": "cpp"
     }
 }
