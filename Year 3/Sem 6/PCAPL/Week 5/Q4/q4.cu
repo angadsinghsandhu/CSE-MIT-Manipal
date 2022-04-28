@@ -5,9 +5,8 @@
 __host__ __device__ void printMatrix(const char * string, int * A, int width) {
   printf("%s\n", string);
   for (int i = 0; i < width; i++) {
-    for (int j = 0; j < width; j++) {
+    for (int j = 0; j < width; j++)
       printf("%d, ", A[i * width + j]);
-    }
     printf("\n");
   }
   printf("\n");
@@ -92,9 +91,7 @@ void multiplyMatrix(int * h_A, int * h_B, int * h_C, int width) {
 }
 
 int main() {
-  int * A, * B, * C, k=1;
-  int width = 3;
-  int size = width * width * sizeof(int);
+  int * A, * B, * C, k=1, width = 3, size = width * width * sizeof(int);
   A = (int * ) calloc(width * width, sizeof(int));
   B = (int * ) calloc(width * width, sizeof(int));
   C = (int * ) calloc(width * width, sizeof(int));

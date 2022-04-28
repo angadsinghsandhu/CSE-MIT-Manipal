@@ -6,6 +6,11 @@
 #include <string.h>
 #define N 1024
 
+/* 
+write a program in cuda to read a sentence with equal length words, 
+count numner of times a word is repeated, use atomin functions
+*/
+
 __global__ void CUDACount(char* A, char* B, int* len, int* wordLen, int* cnt){
     int idx = threadIdx.x, flag=1;
     
@@ -32,7 +37,7 @@ int main(){
     cudaError_t err = cudaGetLastError();
 
     printf("Enter String : ");
-    scanf("%s", A);
+    scanf("%[^\n]%*c", A);
     printf("String : %s\n\n", A);
 
     printf("Enter Word to be searched in String : ");
@@ -104,5 +109,4 @@ int main(){
     cudaFree(d_wordLen);
     cudaFree(d_count);
     return 0;
-
 }
