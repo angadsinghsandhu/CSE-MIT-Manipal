@@ -17,7 +17,7 @@ def synchronizeTime():
     process_delay_latency = response_time - request_time
     print("Process Delay latency: " + str(process_delay_latency) + " seconds")
     print("Actual clock time at client side: " + str(actual_time))
-    client_time = server_time + datetime.timedelta(seconds = (process_delay_latency) /2)
+    client_time = server_time + datetime.timedelta(seconds=(process_delay_latency) / 2)
     print("Synchronized process client time: " + str(client_time))
     time.sleep(10)
     s.close()
