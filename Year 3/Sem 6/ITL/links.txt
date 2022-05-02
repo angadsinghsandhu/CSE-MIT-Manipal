@@ -1,4 +1,4 @@
 link : https://acaso.herokuapp.com/chat
 
 D : https://acaso.herokuapp.com/chat/personal/1111111111/0000000000/
-B : https://acaso.herokuapp.com/chat/personal/2222222222/0000000000/
+B : https://acaso.herokuapp.com/chat/personal/9999999999/9898989898/
